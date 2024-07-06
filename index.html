@@ -1,149 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>ME : Hendri Sulistya</title>
-        <link rel="icon" type="image/icon" href="assets/images/tabicon.ico">
-
-        <link rel="stylesheet" type="text/css" href="">
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/css/bootstrap-theme.min.css" rel="stylesheet">
-        <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,700i" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,700,700i|Josefin+Sans:700" rel="stylesheet">
-        <link href="assets/css/main.css" rel="stylesheet">
-        <link rel="icon" href="assets/images/logo.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-        
-    </head>
-
-    <body>
-        <div id="index">                                           <!-- Index starts here -->
-            <div class="container main">
-                <div class="row home">
-                    <div id = "index_left" class="col-md-6 left">
-                        <img class="img-responsive img-rabbit" src="assets/images/i.png">
-                    </div>
-                    <div id = "index_right" class="col-md-6 text-center right">
-                        <div class="logo">
-                            <img src="assets/images/logo.png">
-                            <h4>I am Hendri Sulistya</h4>
-                        </div>
-                        <p class="home-description">
-                            Welcome, Wanna know me more.
-                        </p>
-                        <div class="btn-group-vertical custom_btn animated slideinright">
-                            <div id="about" class="btn btn-rabbit">About me</div>
-                            <div id="work" class="btn btn-rabbit">Work</div>
-                            <div id="contact" class="btn btn-rabbit">Contact</div>
-                        </div>      
-                        <div class="social">
-                            <a href="http://twitter.com/hendrisulistya"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-							<a href="http://instagram.com/hendrisulistya"><i class="fa fa-instagram" aria-hidden="true"></i></a>							
-							<a href="http://facebook.com/hendrisulistya"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="http://youtube.com/hendrisulistya"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-                            <a href="http://linkedin.com/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                            <a href="https://github.com/hendrisulistya"><i class="fa fa-github" aria-hidden="true"></i></a>
-                            <a href="http://wa.me/6287839058190"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <script src="assets/scripts/tailwindcss.js"></script>
+  <style>
+    body {
+      background-image: url("/assets/images/bg.svg");
+    }
+    .gloria-hallelujah-regular {
+      font-family: "Gloria Hallelujah", cursive;
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+</head>
+<body class="flex justify-center items-center h-screen">
+    <div class="w-4/5 border border-black">
+        <div class="flex flex-col md:flex-row">
+            <div class="hero-section flex-1 p-4 border border-black text-center order-1 md:order-1">
+                <div class="lg:max-w-lg lg:w-full my-5 md:mb-0 md:w-1/2 w-3/6 mx-auto">
+                    <img class="object-cover object-center rounded" alt="hero" src="/assets/images/hero.png">
                 </div>
-
-                
             </div>
-        </div>                                                      <!-- index ends here -->
-
-        <div id="about_scroll" class="pages ">                      <!-- about strats here  -->
-            <div class="container main">
-                <div class="row">
-                    <div class="col-md-6 left" id="about_left">
-                        <img class="img-responsive img-rabbit" src="assets/images/about.jpg">
+            <div class="content-section flex-1 p-4 border border-black order-2 md:order-2">
+                <div class="flex flex-col h-full">
+                    <div class="flex-1/3 p-4 border border-black text-center">
+                        <div class="hidden sm:block">
+                            <nav class="flex justify-center">
+                              <a href="#home" class="nav-link text-gray-700 hover:bg-gray-100 px-3 py-2 font-medium text-sm rounded-md">
+                                <img width="50" height="50" src="https://img.icons8.com/stickers/100/home-page.png" alt="home-page" /> Home </a>
+                              <a href="#info" class="nav-link text-gray-700 hover:bg-gray-100 px-3 py-2 font-medium text-sm rounded-md">
+                                <img width="50" height="50" src="https://img.icons8.com/stickers/100/new-document.png" alt="new-document" /> Basic Info </a>
+                              <a href="#project" class="nav-link text-gray-700 hover:bg-gray-100 px-3 py-2 font-medium text-sm rounded-md">
+                                <img width="50" height="50" src="https://img.icons8.com/stickers/100/four-squares.png" alt="four-squares" /> Project </a>
+                              <a href="#contact" class="nav-link text-gray-700 hover:bg-gray-100 px-3 py-2 font-medium text-sm rounded-md">
+                                <img width="50" height="50" src="./assets/images/touch-id.svg" alt="">
+                              </a>
+                            </nav>
+                          </div>
                     </div>
-
-                    <div class="col-md-6 right" id="about_right">
-                        <a href="#index" class="btn btn-rabbit back"> <i class="fa fa-angle-left" aria-hidden="true"></i> Back to home </a>
-                        <div id="watermark">
-                            <h2 class="page-title" text-center>About Me</h2>
-                            <div class="marker">a</div>
-                        </div>
-                        <p class='subtitle'>Hi, I am Hendri Sulistya. A diesel engine technician from Special Region Yogyakarta,ID.
-                        </p>
-                        <p class="info">"I am a man who is very interested in the world of technology but on the other hand also likes nature, two very different things put together in the human soul, that's me. I am also a free thinker, likes philosophy, human history, political development and often has thoughts in my mind to question something related to religion and God. In life experience is my best teacher, but I often use the experience of friends. My friends think I'm weird, but for me that's the meaning of completing in this world. I prefer to be called a person who is simple, open source, light.
-                            That is the philosophy of my life"</p>  
-                    </div>
-                </div>
-            </div>            
-        </div>                                                                <!-- About ends here -->
-
-
-        
-        <div id="work_scroll" class="pages">                                  <!-- Work starts here -->
-            <div class="container main">
-                <div class="row">
-                    <div class="col-md-6" id="work_left">
-                        <div id="owl-demo" class="owl-carousel owl-theme">
-                            <div class="item"><img class="img-responsive img-rabbit" src="assets/images/work.jpg"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6" id="work_right">
-                        <a href="#index" class="btn btn-rabbit back"> <i class="fa fa-angle-left" aria-hidden="true"></i> Back to Home </a>
-                        <div id="watermark">
-                            <h2 class="page-title" text-center>Work</h2>
-                            <div class="marker">w</div>
-                        </div>
-                        <p class='subtitle'>This is my job, about humans who are struggling with vehicle and engines.
-                        </p>
-                        <p class="info">In everyday life you may always be connected with vehicles for mobility everywhere, maybe you are not aware of the role of my work in the smooth running of your mobility, that is my responsibility.
-                            Vehicles and engines are like my own child that I have to take care of with all my heart. That's a little story about what I do in my life.</p>
-                    </div>
-                </div>
-            </div>    
-        </div>                                                                 <!-- Work ends here  -->
-
-
-        <div id="contact_scroll" class="pages">                             <!-- Contact starts here -->
-            <div class="container main">
-                <div class="row">
-                    <div class="col-md-6 left" id="contact_left">
-                        <img class="img-responsive img-rabbit" src="assets/images/contact.jpeg">
-                    </div>
-
-                    <div class="col-md-6 right" id="contact_right">
-                        <a href="#index" class="btn btn-rabbit back"> <i class="fa fa-angle-left" aria-hidden="true"></i> Back to Home </a>
-                        <div id="watermark">
-                            <h2 class="page-title" text-center>FIND ME</h2>
-                            <div class="marker">c</div>
-                        </div>
-                        <p class='subtitle'>I live in Kepek RT49 RW21 in the Kulon Progo, not far from Wates, YIA Airport, Station and Bus Terminal. Below my Location.
-                        </p>
-                        <!-- form -->
-                        <form class="form_edit"> 
-                            <div class="form-group">
-                               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.1437259504015!2d110.17255282916932!3d-7.834733671060878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwNTAnMDUuMSJTIDExMMKwMTAnMjMuMiJF!5e0!3m2!1sid!2sid!4v1584792638493!5m2!1sid!2sid" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                            </div>
-                        </form>
+                    <div class="flex-2/3 p-4 border border-black overflow-y-scroll" id="content-container">
+                        <!-- Dynamic content will be loaded here -->
                     </div>
                 </div>
             </div>
-       
-            <footer class="text-center">
-                <div class="container bottom">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <p>Made with <i class="fa fa-heartbeat" aria-hidden="true"></i> by <a href="hendrisulistya.com">Hendri Sulistya</a></p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            
-        </div>                                                              <!-- Contact ends here -->
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/script.js"></script>
-    </body>
+        </div>
+        <div class="flex">
+            <div class="flex-1 lg:p-4 sm:p-1 border border-black text-center">
+                <ul class="flex justify-center mt-5 space-x-5">
+                    <li class="flex items-center">
+                        <p class="gloria-hallelujah-regular">
+                            Find me on
+                        </p>
+                    </li>
+                    <li>
+                      <a href="https://facebook.com/hendrisulistya" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                        <img src="https://img.icons8.com/?size=100&id=68186&format=png&color=000000" alt="" class="w-10 h-10">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://instagram.com/hendrisulistya" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                        <img src="https://img.icons8.com/?size=100&id=68184&format=png&color=000000" alt="" class="w-10 h-10">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://x.com/hendrisulistya" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                        <img src="https://img.icons8.com/?size=100&id=110870&format=png&color=000000" alt="" class="p-1 w-10 h-10">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://github.com/hendrisulistya" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                        <img src="https://img.icons8.com/?size=100&id=0tREDFkScvsm&format=png&color=000000" alt="" class="w-10 h-10">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://linkedin/in/hendrisulistya" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                        <img width="30" height="30" src="https://img.icons8.com/?size=100&id=WyB8Jtm9PZoo&format=png&color=000000" alt="">
+                      </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="block sm:hidden fixed bottom-0 w-full bg-white border-t">
+        <nav class="flex justify-around py-2">
+            <a href="#home" class="nav-link text-gray-700 hover:bg-gray-100 px-3 py-2 font-medium text-sm rounded-md">
+                <img width="30" height="30" src="https://img.icons8.com/stickers/100/home-page.png" alt="home-page" />
+            </a>
+            <a href="#info" class="nav-link text-gray-700 hover:bg-gray-100 px-3 py-2 font-medium text-sm rounded-md">
+                <img width="30" height="30" src="https://img.icons8.com/stickers/100/new-document.png" alt="new-document" />
+            </a>
+            <a href="#project" class="nav-link text-gray-700 hover:bg-gray-100 px-3 py-2 font-medium text-sm rounded-md">
+                <img width="30" height="30" src="https://img.icons8.com/stickers/100/four-squares.png" alt="four-squares" />
+            </a>
+            <a href="#contact" class="nav-link text-gray-700 hover:bg-gray-100 px-3 py-2 font-medium text-sm rounded-md">
+                <img width="30" height="30" src="./assets/images/touch-id.svg" alt="">
+            </a>
+        </nav>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.nav-link');
+            const contentContainer = document.getElementById('content-container');
+
+            function loadContent(section) {
+                fetch(`./pages/${section}.html`)
+                    .then(response => response.text())
+                    .then(html => {
+                        contentContainer.innerHTML = html;
+                    })
+                    .catch(error => {
+                        console.error('Error loading content:', error);
+                    });
+            }
+
+            links.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const target = link.getAttribute('href').substring(1);
+                    loadContent(target);
+                });
+            });
+
+            // Initial load
+            loadContent('home');
+        });
+    </script>
+</body>
 </html>
