@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hendri's Home Page</title>
+    <meta name="description" content="Hendri Sulistya's Home Page" />
+    <meta name="keywords" content="Hendri Sulistya" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="profile-image">
+        <img
+          src="assets/images/hendri.png"
+          width="300"
+          height="300"
+          alt="Hendri Sulistya"
+        />
+      </div>
+      <div class="profile-details">
+        <h1>Hendri Sulistya</h1>
+        <hr />
+        <table>
+          <tr>
+            <td>
+              📨
+              <a href="mailto:id.hendrisulistya@gmail.com"
+                >id.hendrisulistya@gmail.com</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>🌐 <a href="https://hendri.org">hendri.org</a></td>
+          </tr>
+          <tr>
+            <td>
+              Software Developer at
+              <a href="http://www.kewr-digital.com/">Kewr Digital</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Researcher at <a href="http://www.kewr.org">Kewr Foundation</a>
+            </td>
+          </tr>
+        </table>
+        <hr />
+        <p class="profile-quote">
+          <i>"Learn from mistake. Fight for future."</i>
+        </p>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="#home" onclick="loadContent('home')">Home</a></li>
+        <li><a href="#project" onclick="loadContent('project')">Project</a></li>
+        <li><a href="#contact" onclick="loadContent('contact')">Contact</a></li>
+        <li><a href="#about" onclick="loadContent('about')">About</a></li>
+      </ul>
+    </nav>
+    <div class="content" id="content">
+      <!-- Dynamic content will be loaded here -->
+    </div>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
