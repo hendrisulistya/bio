@@ -6,62 +6,118 @@
     <title>Hendri's Home Page</title>
     <meta name="description" content="Hendri Sulistya's Home Page" />
     <meta name="keywords" content="Hendri Sulistya" />
-    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link id="theme-light" rel="stylesheet" href="/assets/css/style.css" />
+    <link
+      id="theme-dark"
+      rel="stylesheet"
+      href="/assets/css/dark.css"
+      disabled
+    />
   </head>
   <body>
-    <div class="container">
-      <div class="profile-image">
-        <img
-          src="assets/images/hendri.png"
-          width="300"
-          height="300"
-          alt="Hendri Sulistya"
-        />
-      </div>
-      <div class="profile-details">
-        <h1>Hendri Sulistya</h1>
-        <hr />
-        <table>
-          <tr>
-            <td>
-              📨
-              <a href="mailto:id.hendrisulistya@gmail.com"
-                >id.hendrisulistya@gmail.com</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>🌐 <a href="https://hendri.org">hendri.org</a></td>
-          </tr>
-          <tr>
-            <td>
-              Software Developer at
-              <a href="http://www.kewr-digital.com/">Kewr Digital</a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Researcher at <a href="http://www.kewr.org">Kewr Foundation</a>
-            </td>
-          </tr>
-        </table>
-        <hr />
-        <p class="profile-quote">
-          <i>"Learn from mistake. Fight for future."</i>
-        </p>
-      </div>
+    <div class="toggle-wrapper">
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="slider round"></span>
+      </label>
     </div>
-    <nav class="nav-links">
-      <ul>
-        <li><a href="#home" onclick="loadContent('home')">Home</a></li>
-        <li><a href="#project" onclick="loadContent('project')">Project</a></li>
-        <li><a href="#contact" onclick="loadContent('contact')">Contact</a></li>
-        <li><a href="#about" onclick="loadContent('about')">About</a></li>
-      </ul>
-    </nav>
-    <div class="content" id="content">
-      <!-- Dynamic content will be loaded here -->
+    <div class="container">
+      <div class="profile-wrapper">
+        <div class="profile-image">
+          <img
+            src="assets/images/hendri.png"
+            width="300"
+            height="300"
+            alt="Hendri Sulistya"
+          />
+        </div>
+        <div class="profile-details">
+          <h1>Hendri Sulistya</h1>
+          <hr />
+          <table>
+            <tr>
+              <td>
+                Software Developer at
+                <a href="http://www.kewr-digital.com/" target="_blank"
+                  >Kewr Digital</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Researcher at
+                <a href="http://www.kewr.org" target="_blank"
+                  >Kewr Foundation</a
+                >
+              </td>
+            </tr>
+          </table>
+          <hr />
+          <table>
+            <tr>
+              <td>
+                📨
+                <a href="mailto:id.hendrisulistya@gmail.com" target="_blank"
+                  >id.hendrisulistya@gmail.com</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>
+                🌐
+                <a href="https://hendri.org" target="_blank">hendri.org</a> |✎
+                <a href="https://blog.hendri.org" target="_blank"
+                  >blog.hendri.org</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>
+                📶
+                <a href="https://linkedin.com/in/hendrisulistya" target="_blank"
+                  >LinkedIn</a
+                >
+                |
+                <a href="https://github.com/hendrisulistya" target="_blank"
+                  >Github</a
+                >
+                |
+                <a href="https://x.com/hendrisulistya" target="_blank">X</a>
+                |
+                <a
+                  href="https://etherscan.io/address/0x159f57909ab7d0Abe3467F36CB97B1798FA44000"
+                  target="_blank"
+                  >juragan.eth</a
+                >
+              </td>
+            </tr>
+          </table>
+          <hr />
+          <p class="profile-quote">
+            <i>"Learn from mistake. Fight for future."</i>
+          </p>
+        </div>
+      </div>
+
+      <div class="content-wrapper">
+        <nav class="nav-links">
+          <ul>
+            <li><a href="#home" onclick="loadContent('home')">Home</a></li>
+            <li>
+              <a href="#project" onclick="loadContent('project')">Project</a>
+            </li>
+            <li>
+              <a href="#contact" onclick="loadContent('contact')">Contact</a>
+            </li>
+            <li><a href="#about" onclick="loadContent('about')">About</a></li>
+          </ul>
+        </nav>
+        <div class="content" id="content">
+          <!-- Dynamic content will be loaded here -->
+        </div>
+      </div>
     </div>
     <script src="assets/js/script.js"></script>
+    <script src="/assets/js/theme.js" defer></script>
   </body>
 </html>

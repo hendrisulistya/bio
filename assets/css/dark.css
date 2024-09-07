@@ -1,0 +1,103 @@
+/* Apply the same layout styles from style.css */
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.profile-wrapper {
+  background-color: #1e1e1e;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.profile-wrapper a {
+  color: lightskyblue;
+}
+
+.profile-wrapper a:visited {
+  color: #8d6faa;
+}
+
+.profile-image img {
+  background-color: #e0e0e0;
+  border-radius: 5%;
+}
+
+.nav-links {
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent */
+  color: #e0e0e0;
+}
+
+.nav-links a {
+  color: #e0e0e0;
+  background-color: #333;
+  box-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.content {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+/* Switch Container Dark Mode */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide the default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider Style */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #666; /* Dark mode background */
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+/* Before the slider (circle) */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+/* Checkbox Checked State */
+input:checked + .slider {
+  background-color: #999; /* Dark mode background */
+}
+
+/* Slider Circle Move */
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded Corners for Slider */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
