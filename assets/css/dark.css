@@ -1,7 +1,7 @@
 /* Apply the same layout styles from style.css */
 body {
   background-color: #121212;
-  color: #e0e0e0;
+  color: #dddd;
 }
 
 .profile-wrapper {
@@ -18,7 +18,7 @@ body {
 }
 
 .profile-image img {
-  background-color: #e0e0e0;
+  background-color: #5a5a5a;
   border-radius: 5%;
 }
 
