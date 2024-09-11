@@ -15,33 +15,36 @@
     />
   </head>
   <body>
-    <div class="toggle-wrapper">
-      <label class="switch">
-        <input type="checkbox" id="theme-toggle" />
-        <span class="slider round"></span>
-      </label>
-    </div>
     <div class="container">
+      <div class="toggle-wrapper">
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider round"></span>
+        </label>
+      </div>
       <div class="content-wrapper">
         <nav class="nav-links">
-          <ul>
-            <li><a href="#home" onclick="loadContent('home')">Home</a></li>
-            <li>
-              <a href="#work" onclick="loadContent('work')">Work</a>
-            </li>
-            <li>
-              <a href="#interest" onclick="loadContent('interest')">Interest</a>
-            </li>
-            <li>
-              <a href="#resume" onclick="loadContent('resume')">Resume</a>
-            </li>
-          </ul>
+          <div class="nav-items">
+            <ul>
+              <li><a href="#home" onclick="loadContent('home')">Home</a></li>
+              <li><a href="#work" onclick="loadContent('work')">Work</a></li>
+              <li>
+                <a href="#interest" onclick="loadContent('interest')"
+                  >Interest</a
+                >
+              </li>
+              <li>
+                <a href="#resume" onclick="loadContent('resume')">Resume</a>
+              </li>
+            </ul>
+          </div>
         </nav>
         <div class="content" id="content">
           <!-- Dynamic content will be loaded here -->
         </div>
       </div>
     </div>
+
     <script src="assets/js/script.js"></script>
     <script src="/assets/js/theme.js" defer></script>
   </body>

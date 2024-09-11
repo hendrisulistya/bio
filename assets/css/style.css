@@ -1,89 +1,153 @@
 /* Basic styling */
+
+html,
 body {
-  font-family: Georgia, "Times New Roman", serif;
+  height: 100%;
   margin: 0;
-  padding: 0;
-  background-color: #f0f0f0;
-  color: #333;
 }
 
 .container {
-  width: 80%;
-  margin: auto;
-  padding: 1vw;
-}
-
-.content-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  width: 95%;
-  margin: auto;
+  width: 90%; /* Set width to 90% of the viewport width */
+  height: 100%; /* Full viewport height */
+  margin: 0 auto; /* Center horizontally */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box; /* Include padding in width and height calculations */
 }
 
 .nav-links {
   display: flex;
-  width: 100%;
+  justify-content: space-between; /* Space between nav-items and toggle-wrapper */
+  align-items: center; /* Center items vertically */
   background-color: white;
-  margin: 1%;
-  padding: 1%;
-  border-radius: 0.75rem; /* Rounded-xl equivalent */
-  font-size: 0.875rem; /* Text-sm equivalent */
-  color: #4b5563; /* Gray-600 equivalent */
+  padding: 0.5rem 1rem; /* Add padding around nav-links if needed */
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  color: #4b5563;
 }
 
-.nav-links ul {
+.nav-items {
   display: flex;
-  justify-content: space-evenly;
-  width: 100%;
+  align-items: center; /* Center items vertically */
+}
+
+.nav-items ul {
+  display: flex;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.nav-links li {
-  margin: 0;
+.nav-items li {
+  margin-right: 1rem; /* Space between list items */
 }
 
-.nav-links a {
+.nav-items a {
   display: block;
   padding: 0.5rem 1.25rem;
-  font-weight: 500; /* Font-medium equivalent */
-  border-radius: 0.5rem; /* Rounded-lg equivalent */
+  font-weight: 500;
+  border-radius: 0.5rem;
   border: 1px solid black;
   text-decoration: none;
   text-align: center;
-  color: #333; /* Yellow-600 equivalent */
+  color: #333;
   background-color: white;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Shadow equivalent */
-  flex-grow: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: padding 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-items a:hover {
   color: #1f2937; /* Darker gray for hover */
   scale: 1.1;
 }
 
-.nav-links a:focus {
+.nav-items a:focus {
   outline: none;
-  box-shadow: 0 0 0 1px #333 inset; /* Focus ring equivalent */
+  box-shadow: 0 0 0 1px #333 inset;
 }
 
-.nav-links a:focus:not(:first-child) {
+.nav-items a:focus:not(:first-child) {
   background-color: #333;
   color: white;
 }
 
-.nav-links a:active {
-  background-color: #333;
-  color: white;
+.nav-items a.active {
+  pointer-events: none; /* Disable clicking */
+  opacity: 0.5; /* Optional: Make it look disabled */
+  cursor: default; /* Change cursor to default to indicate it's not clickable */
+}
+
+.toggle-wrapper {
+  display: flex;
+  align-items: center; /* Center the toggle vertically */
+  justify-content: end;
+  padding: 1%;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded Corners for Slider */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 .content {
   width: 100%;
-  padding: 1rem;
+  height: calc(
+    100% - 3.5rem
+  ); /* Adjust height to account for the nav-links height and padding */
+  padding-left: 1rem;
+  padding-right: 1rem;
   background-color: white;
-  border-radius: 0.5rem; /* Rounded-lg equivalent */
+  border-radius: 0.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Enable scrolling if content overflows */
 }
 
 .profile-wrapper {
@@ -118,72 +182,6 @@ body {
   margin: 2px;
 }
 
-.toggle-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  padding: 1%;
-}
-
-/* Switch Container Light Mode */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-/* Hide the default checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* Slider Style */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc; /* Light mode background */
-  transition: 0.4s;
-  border-radius: 34px;
-}
-
-/* Before the slider (circle) */
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  border-radius: 50%;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: 0.4s;
-}
-
-/* Checkbox Checked State */
-input:checked + .slider {
-  background-color: #333; /* Dark mode background */
-}
-
-/* Slider Circle Move */
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-/* Rounded Corners for Slider */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
 /* style.css (for light mode) */
 .download {
   padding: 10px 20px;
@@ -204,6 +202,49 @@ input:checked + .slider:before {
 .resume-header {
   display: flex;
   justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+#work {
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.work-wrapper {
+  max-height: 100%; /* Set the maximum height for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling when content overflows */
+  padding-right: 10px; /* Add space to avoid scrollbar overlapping content */
+  border: 1px solid #ccc; /* Optional: visual distinction for the scrollable area */
+}
+
+/* Specifically target ul within the work-wrapper */
+.work-wrapper ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.showcase {
+  width: 100%;
+  background-color: blue;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  color: white;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.showcase .description {
+  flex: 0 0 40%;
+  background-color: darkblue;
+  padding: 10px;
+}
+
+.showcase .preview {
+  flex: 0 0 60%;
+  background-color: lightblue;
+  padding: 10px;
 }
 
 /* Responsive styling */
