@@ -37,10 +37,18 @@ body {
   color: #ffffff;
 }
 
+.content-wrapper {
+  background-color: transparent;
+}
+
 .content {
   background-color: #1e1e1e;
   color: #e0e0e0;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+#work {
+  color: #dddd;
 }
 
 .download {

@@ -22,7 +22,6 @@ body {
   background-color: white;
   padding: 0.5rem 1rem; /* Add padding around nav-links if needed */
   border-radius: 0.75rem;
-  font-size: 0.875rem;
   color: #4b5563;
 }
 
@@ -137,6 +136,10 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+.content-wrapper {
+  background-color: transparent;
+}
+
 .content {
   width: 100%;
   height: calc(
@@ -207,14 +210,11 @@ input:checked + .slider:before {
 
 #work {
   padding: 20px;
-  background-color: #f0f0f0;
 }
 
 .work-wrapper {
   max-height: 100%; /* Set the maximum height for scrolling */
   overflow-y: auto; /* Enable vertical scrolling when content overflows */
-  padding-right: 10px; /* Add space to avoid scrollbar overlapping content */
-  border: 1px solid #ccc; /* Optional: visual distinction for the scrollable area */
 }
 
 /* Specifically target ul within the work-wrapper */
@@ -226,25 +226,30 @@ input:checked + .slider:before {
 
 .showcase {
   width: 100%;
-  background-color: blue;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  color: white;
   box-sizing: border-box;
   overflow: hidden;
+  border: 1px solid #ccc; /* Optional: visual distinction for the scrollable area */
+  border-radius: 0.5rem;
+  padding: 0.5rem;
 }
 
 .showcase .description {
   flex: 0 0 40%;
-  background-color: darkblue;
-  padding: 10px;
+  padding: 1%;
+  text-align: justify;
 }
 
 .showcase .preview {
   flex: 0 0 60%;
-  background-color: lightblue;
-  padding: 10px;
+  padding: 0.5rem;
+}
+
+.preview img {
+  width: 90%; /* Make the image take up the full width of its parent */
+  height: 90%; /* Make the image take up the full height of its parent */
+  border-radius: 0.5rem; /* Optional: add some border radius */
 }
 
 /* Responsive styling */
