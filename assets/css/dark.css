@@ -1,7 +1,6 @@
 /* Apply the same layout styles from style.css */
 body {
   background-color: #121212;
-  color: #dddd;
 }
 
 .profile-wrapper {
@@ -9,7 +8,7 @@ body {
 }
 
 .profile-wrapper a {
-  color: lightskyblue;
+  color: #87cefa;
 }
 
 .profile-wrapper a:visited {
@@ -18,79 +17,81 @@ body {
 
 .profile-image img {
   background-color: #5a5a5a;
-  border-radius: 5%;
+  border-radius: 0.5em;
 }
 
 .nav-links {
-  background-color: transparent;
   color: #e0e0e0;
 }
 
 .nav-links a {
-  color: #e0e0e0;
   background-color: #333;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-  border: 1px solid rgb(99, 99, 99);
+  border: 1px solid #636363;
 }
 
 .nav-links a:hover {
-  color: #ffffff;
+  color: #fff;
 }
 
-.content-wrapper {
+.content-wrapper,
+.nav-links {
   background-color: transparent;
 }
 
-.content {
-  background-color: #1e1e1e;
+.content,
+.download,
+.nav-links a {
   color: #e0e0e0;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
-#work {
+.content,
+.download {
+  background-color: #1e1e1e;
+}
+
+#work,
+body {
   color: #dddd;
 }
 
+.button,
 .download {
   padding: 10px 20px;
-  background-color: #333; /* Dark gray */
-  color: #fff; /* White text */
+  background-color: #333;
+  color: #fff;
   cursor: pointer;
   border-radius: 5px;
   font-size: 16px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-  border: 1px solid rgb(99, 99, 99);
+  border: 1px solid #636363;
 }
 
-.download:hover {
-  background-color: #555; /* Lighter gray on hover */
-}
-
-/* Toggle Wrapper for Dark Mode */
 .toggle-wrapper {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Darker shadow for a lifted appearance */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-/* Slider for Dark Mode */
+.download:hover,
 .slider {
-  background-color: #555; /* Darker gray for the slider */
+  background-color: #555;
 }
 
-/* Slider Checked State for Dark Mode */
 input:checked + .slider {
-  background-color: #64b5f6; /* Lighter blue for checked state */
+  background-color: #64b5f6;
 }
 
-/* Slider Circle for Dark Mode */
 .slider:before {
-  background-color: #222; /* Dark circle */
+  background-color: #222;
 }
 
-/* Rounded Corners for Slider (unchanged) */
 .slider.round {
   border-radius: 34px;
 }
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.preview img {
+  border-style: solid;
+  border-color: #e0e0e0;
 }
