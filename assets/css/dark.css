@@ -2,6 +2,9 @@
 body {
   background-color: #121212;
 }
+body a {
+  color: #87cefa;
+}
 
 .profile-wrapper {
   background-color: #1e1e1e;
@@ -94,4 +97,9 @@ input:checked + .slider {
 .preview img {
   border-style: solid;
   border-color: #e0e0e0;
+}
+
+.interest-nav a {
+  color: #e0e0e0;
+  border: 1px solid #e0e0e0;
 }

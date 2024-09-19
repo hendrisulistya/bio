@@ -25,6 +25,23 @@ function loadInitialContent() {
   loadContent("home"); // Load the default content
 }
 
+// Toggle display for the selected element and hide others
+function toggleDisplay(elementId) {
+  const sections = [
+    "interest-article",
+    "interest-book",
+    "interest-paper",
+    "interest-video",
+  ];
+
+  sections.forEach((id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.style.display = id === elementId ? "block" : "none";
+    }
+  });
+}
+
 // Event listener for window onload to load initial content
 window.addEventListener("load", loadInitialContent);
 

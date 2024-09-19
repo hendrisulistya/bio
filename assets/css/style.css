@@ -318,6 +318,39 @@ input:checked + .slider:before {
   width: 5rem;
 }
 
+#interest {
+  padding: 0.5rem;
+}
+.interest-wrapper {
+  padding: 0.5rem;
+}
+.interest-nav {
+  padding: 0.5rem;
+}
+
+.interest-nav a {
+  display: inline-block;
+  padding: 0.5rem 0.5rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: 1px solid #000;
+  color: #333;
+  text-decoration: none;
+}
+
+#interest-article {
+  display: block;
+}
+#interest-book,
+#interest-paper,
+#interest-video {
+  display: none;
+}
+
+.toggle-display {
+  display: flex;
+}
+
 /* Responsive styling */
 @media (max-width: 768px) {
   .container {
