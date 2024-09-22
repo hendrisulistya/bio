@@ -460,6 +460,10 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 480px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
   #carrer {
     padding: 0.5rem;
   }
@@ -491,7 +495,7 @@ input:checked + .slider:before {
   }
 
   .nav-links {
-    width: 100%;
+    width: auto;
     margin-top: 10px;
   }
 
