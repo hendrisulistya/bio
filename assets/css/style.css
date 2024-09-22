@@ -491,7 +491,6 @@ input:checked + .slider:before {
   }
 
   .nav-links {
-    justify-content: normal;
     width: 100%;
     margin-top: 10px;
   }
@@ -502,6 +501,10 @@ input:checked + .slider:before {
 
   .nav-links ul {
     margin-top: 0;
+  }
+
+  .nav-items a {
+    padding: 0.5rem;
   }
 
   .content {
