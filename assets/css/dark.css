@@ -1,0 +1,110 @@
+/* Apply the same layout styles from style.css */
+body {
+  background-color: #121212;
+}
+body a {
+  color: #87cefa;
+}
+
+.profile-wrapper {
+  background-color: #1e1e1e;
+}
+
+.profile-wrapper a {
+  color: #87cefa;
+}
+
+.profile-wrapper a:visited {
+  color: #8d6faa;
+}
+
+.profile-image img {
+  background-color: #5a5a5a;
+  border-radius: 0.5em;
+}
+
+.nav-links {
+  color: #e0e0e0;
+}
+
+.nav-links a {
+  background-color: #333;
+  border: 1px solid #636363;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.content-wrapper,
+.nav-links {
+  background-color: transparent;
+}
+
+.content,
+.download,
+.nav-links a {
+  color: #e0e0e0;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.content,
+.download {
+  background-color: #1e1e1e;
+}
+
+#work,
+body {
+  color: #dddd;
+}
+
+.button,
+.download {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid #636363;
+}
+
+.toggle-wrapper {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.download:hover,
+.slider {
+  background-color: #555;
+}
+
+input:checked + .slider {
+  background-color: #64b5f6;
+}
+
+.slider:before {
+  background-color: #222;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.preview img {
+  border-style: solid;
+  border-color: #e0e0e0;
+}
+
+.interest-nav a {
+  color: #e0e0e0;
+  border: 1px solid #e0e0e0;
+}
+
+.work-item,
+.work-company-name,
+.work-description,
+.work-position,
+.work-date span {
+  color: #e0e0e0;
+}
