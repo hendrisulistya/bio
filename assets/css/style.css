@@ -204,13 +204,18 @@ input:checked + .slider:before {
 }
 
 #career {
-  padding: 20px;
+  padding: 0.5rem;
+}
+
+.pro-work {
+  margin: 0.5rem;
 }
 
 /* General styles for the work-item */
 .work-item {
   display: flex;
   border-style: solid;
+  margin: 0.5rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
 }
@@ -227,7 +232,6 @@ input:checked + .slider:before {
 
 /* Work date styles */
 .work-date {
-  font-size: 14px;
   color: #555;
 }
 
@@ -243,18 +247,15 @@ input:checked + .slider:before {
 
 .work-position {
   font-weight: bold;
-  font-size: 16px;
   color: #333;
 }
 
 .work-company-name {
-  font-size: 14px;
   color: #777;
 }
 
 /* Work description */
 .work-description {
-  font-size: 14px;
   color: #555;
   line-height: 1.6;
 }
@@ -390,10 +391,10 @@ input:checked + .slider:before {
   text-decoration: none;
 }
 
-#interest-article {
+#interest-book {
   display: block;
 }
-#interest-book,
+
 #interest-paper,
 #interest-video {
   display: none;
@@ -405,6 +406,11 @@ input:checked + .slider:before {
 
 #project {
   padding: 20px;
+}
+
+.button.visit {
+  border-radius: 0.5rem;
+  padding: 0.25rem;
 }
 
 /* Responsive styling */
@@ -454,6 +460,9 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 480px) {
+  #carrer {
+    padding: 0.5rem;
+  }
   .container {
     flex-direction: row;
     align-items: center;
@@ -499,6 +508,7 @@ input:checked + .slider:before {
     font-size: small;
     margin: auto;
     width: auto;
+    padding: 0%;
   }
 
   .download,
@@ -512,5 +522,16 @@ input:checked + .slider:before {
 
   .showcase {
     display: block;
+  }
+
+  .work-item {
+    font-size: x-small;
+  }
+
+  .work-description {
+    text-align: justify;
+  }
+  .pro-work {
+    margin: 0;
   }
 }

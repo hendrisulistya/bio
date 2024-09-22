@@ -60,12 +60,9 @@ body {
 
 .button,
 .download {
-  padding: 10px 20px;
   background-color: #333;
   color: #fff;
   cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px;
   border: 1px solid #636363;
 }
 
@@ -102,4 +99,12 @@ input:checked + .slider {
 .interest-nav a {
   color: #e0e0e0;
   border: 1px solid #e0e0e0;
+}
+
+.work-item,
+.work-company-name,
+.work-description,
+.work-position,
+.work-date span {
+  color: #e0e0e0;
 }

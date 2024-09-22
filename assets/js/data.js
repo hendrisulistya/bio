@@ -117,3 +117,58 @@ const paperData = [
     url: "https://www.example.com/paper-8",
   },
 ];
+
+const videoData = [
+  {
+    url: "https://www.youtube.com/watch?v=Yd9cf_vLviI",
+    title:
+      "Nick Bostrom: Humanity's biggest problems aren't what you think they are",
+    author: "TEDx",
+    description: "Description for Video 1",
+  },
+  {
+    url: "https://www.youtube.com/watch?v=o8sAhDY6IyY&t=140s",
+    title: "Gavin Wood - A Walkthrough of Polkadot's Governance",
+    author: "Polkadot",
+    description: "Description for Video 2",
+  },
+  {
+    url: "https://www.youtube.com/watch?v=RoJkmxpOGis",
+    title: "Ethereum: The World computer, featuring Dr. Gavin Wood",
+    author: "IMWorld 2015",
+    description: "Description for Video 3",
+  },
+  {
+    url: "https://www.youtube.com/watch?v=h2pONw0eTTk",
+    title: "Proof of Stake Panel Discussion - Silicon Valley Ethereum Meetup",
+    author: "Decypher Media",
+    description: "Description for Video 4",
+  },
+  {
+    url: "https://www.youtube.com/watch?v=5QPyMfQBhOs&t=47s",
+    title: "Jae Kwon -Cosmos Internet of Blockchains",
+    author: "LinkTime",
+    description: "Description for Video 5",
+  },
+];
+
+const careerData = [
+  {
+    date: "12/2012 – 3/2017",
+    company: "Karya Zirang Utama PT",
+    location: "Semarang, Indonesia",
+    position: "Service Advisor",
+    department: "Service Dept",
+    description:
+      "Overall responsibility for the human resources management of over 1000 employees during a transition from being a local franchisee to a multiple-territory operation.",
+  },
+  {
+    date: "04/2017 – 10/2018",
+    company: "Armada International Motor PT",
+    location: "Magelang, Indonesia",
+    position: "Mechanic",
+    department: "Service Dept",
+    description:
+      "Oversaw the implementation of Engine Management Systems in diesel vehicles, ensuring compliance with government regulations and improving vehicle efficiency.",
+  },
+];
