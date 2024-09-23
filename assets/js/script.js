@@ -22,6 +22,7 @@ async function loadContent(section) {
     content.innerHTML = sectionCache[section];
     if (section === "interest") loadInterestData();
     if (section === "career") loadCareerData(); // Load career data
+    if (section === "home") loadProfileData(); // Load profile data
   } else {
     try {
       const response = await fetch(`/section/${section}.html`);
@@ -30,42 +31,115 @@ async function loadContent(section) {
       content.innerHTML = data;
       if (section === "interest") loadInterestData();
       if (section === "career") loadCareerData(); // Load career data
+      if (section === "home") loadProfileData(); // Load profile data
     } catch (error) {
       content.innerHTML = `<p>Error loading content: ${error}</p>`;
     }
   }
 }
 
-// Function to dynamically generate and insert career items
+// Function to load profile data
+function loadProfileData() {
+  document.getElementById("cv-link").href = profileData.cvLink;
+  document.getElementById("profile-image").src = profileData.imageSrc;
+  document.getElementById("profile-name").textContent = profileData.name;
+
+  document.getElementById("company-link").href = profileData.company.url;
+  document.getElementById("company-link").textContent =
+    profileData.company.name;
+
+  document.getElementById("researcher-link").href = profileData.researcher.url;
+  document.getElementById("researcher-link").textContent =
+    profileData.researcher.name;
+
+  document.getElementById("email-link").textContent = profileData.email;
+
+  document.getElementById("website-link").href = profileData.website.url;
+  document.getElementById("website-link").textContent = profileData.website.url;
+
+  document.getElementById("blog-link").href = profileData.website.blogUrl;
+  document.getElementById("blog-link").textContent =
+    profileData.website.blogUrl;
+
+  document.getElementById("linkedin-link").href = profileData.social.linkedin;
+  document.getElementById("linkedin-link").textContent = "LinkedIn";
+
+  document.getElementById("github-link").href = profileData.social.github;
+  document.getElementById("github-link").textContent = "Github";
+
+  document.getElementById("x-link").href = profileData.social.x;
+  document.getElementById("x-link").textContent = "X";
+
+  document.getElementById("eth-link").href = profileData.social.eth;
+  document.getElementById("eth-link").textContent = "juragan.eth";
+
+  document.getElementById("profile-quote").textContent = profileData.quote;
+}
+
+// Load career data function
 function loadCareerData() {
-  const workWrapper = document.getElementById("work-wrapper");
-
-  // Clear any existing content before adding new career data
-  workWrapper.innerHTML = "";
-
-  careerData.forEach((job) => {
+  // Function to create a work item element
+  const createWorkItem = (job) => {
     const workItem = document.createElement("div");
     workItem.classList.add("work-item");
 
-    workItem.innerHTML = `
-      <div class="work-left-column">
-        <div class="work-date">
-          <span>${job.date}</span>
-          <span>${job.company}</span>
-          <span>${job.location}</span>
-        </div>
-      </div>
-      <div class="work-right-column">
-        <div class="work-info">
-          <div class="work-position">${job.position}</div>
-          <div class="work-company-name">${job.department}</div>
-        </div>
-        <div class="work-description">
-          ${job.description}
-        </div>
-      </div>
-    `;
-    workWrapper.appendChild(workItem);
+    const workLeftColumn = document.createElement("div");
+    workLeftColumn.classList.add("work-left-column");
+
+    const workDate = document.createElement("div");
+    workDate.classList.add("work-date");
+
+    const date = document.createElement("span");
+    date.textContent = job.date;
+
+    const company = document.createElement("span");
+    company.textContent = job.company;
+
+    const location = document.createElement("span");
+    location.textContent = job.location;
+
+    workDate.append(date, company, location);
+    workLeftColumn.appendChild(workDate);
+
+    const workRightColumn = document.createElement("div");
+    workRightColumn.classList.add("work-right-column");
+
+    const workInfo = document.createElement("div");
+    workInfo.classList.add("work-info");
+
+    const position = document.createElement("div");
+    position.classList.add("work-position");
+    position.textContent = job.position;
+
+    const department = document.createElement("div");
+    department.classList.add("work-company-name");
+    department.textContent = job.department;
+
+    workInfo.append(position, department);
+    workRightColumn.append(workInfo);
+
+    const workDescription = document.createElement("div");
+    workDescription.classList.add("work-description");
+    workDescription.textContent = job.description;
+
+    workRightColumn.append(workDescription);
+    workItem.append(workLeftColumn, workRightColumn);
+
+    return workItem;
+  };
+
+  // Rendering Professional Work
+  const proWorkWrapper = document.getElementById("pro-work-wrapper");
+  proWorkWrapper.innerHTML = ""; // Clear previous content
+  careerData.proWork.forEach((job) => {
+    proWorkWrapper.appendChild(createWorkItem(job));
+  });
+
+  // Rendering Informal Work
+  const informalWorkWrapper = document.getElementById("informal-work-wrapper");
+  informalWorkWrapper.innerHTML = ""; // Clear previous content
+  careerData.informalWork.forEach((job) => {
+    informalWorkWrapper.appendChild(createWorkItem(job));
   });
 }
 
@@ -83,22 +157,15 @@ async function preloadSections() {
       try {
         const response = await fetch(`/section/${section}.html`);
         const data = await response.text();
+        sectionCache[section] = data;
 
-        // Handle specific sections for additional data loading
+        // Cache specific section data but do NOT insert it into the DOM
         if (section === "interest") {
           const tempDiv = document.createElement("div");
           tempDiv.innerHTML = data;
           loadBooks(tempDiv.querySelector("#book-list"));
           loadPapers(tempDiv.querySelector("#paper-list"));
           loadVideos(tempDiv.querySelector("#video-list"));
-          sectionCache[section] = tempDiv.innerHTML;
-        } else if (section === "career") {
-          const tempDiv = document.createElement("div");
-          tempDiv.innerHTML = data;
-          loadCareerData(); // Preload career data
-          sectionCache[section] = tempDiv.innerHTML;
-        } else {
-          sectionCache[section] = data;
         }
       } catch (error) {
         console.error(`Error preloading section ${section}: ${error}`);

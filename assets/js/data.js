@@ -1,5 +1,32 @@
 // data.js
 
+// Profile data
+const profileData = {
+  name: "Hendri Sulistya",
+  cvLink: "/assets/pdf/cv.pdf",
+  imageSrc: "assets/images/hendri.png",
+  company: {
+    name: "Kewr Digital",
+    url: "http://www.kewr-digital.com/",
+  },
+  researcher: {
+    name: "Kewr Foundation",
+    url: "http://www.kewr.org",
+  },
+  email: "hendrisulistya@yahoo.com",
+  website: {
+    url: "https://hendri.org",
+    blogUrl: "https://blog.hendri.org",
+  },
+  social: {
+    linkedin: "https://linkedin.com/in/hendrisulistya",
+    github: "https://github.com/hendrisulistya",
+    x: "https://x.com/hendrisulistya",
+    eth: "https://etherscan.io/address/0x159f57909ab7d0Abe3467F36CB97B1798FA44000",
+  },
+  quote: '"Learn from mistake. Fight for future."',
+};
+
 const bookData = [
   {
     title: "Structure and Interpretation of Computer Programs",
@@ -152,23 +179,63 @@ const videoData = [
   },
 ];
 
-const careerData = [
-  {
-    date: "12/2012 – 3/2017",
-    company: "Karya Zirang Utama PT",
-    location: "Semarang, Indonesia",
-    position: "Service Advisor",
-    department: "Service Dept",
-    description:
-      "Overall responsibility for the human resources management of over 1000 employees during a transition from being a local franchisee to a multiple-territory operation.",
-  },
-  {
-    date: "04/2017 – 10/2018",
-    company: "Armada International Motor PT",
-    location: "Magelang, Indonesia",
-    position: "Mechanic",
-    department: "Service Dept",
-    description:
-      "Oversaw the implementation of Engine Management Systems in diesel vehicles, ensuring compliance with government regulations and improving vehicle efficiency.",
-  },
-];
+const careerData = {
+  proWork: [
+    {
+      date: "12/2012 – 3/2017",
+      company: "Karya Zirang Utama PT",
+      location: "Semarang, Indonesia",
+      position: "Service Advisor",
+      department: "Service Dept",
+      description:
+        "Provide exceptional customer service to automotive clients by effectively managing their vehicle service needs, ensuring their satisfaction throughout the entire process, and proactively preventing vehicle breakdowns.",
+    },
+    {
+      date: "04/2017 – 10/2018",
+      company: "Armada International Motor PT",
+      location: "Magelang, Indonesia",
+      position: "Mechanic",
+      department: "Service Dept",
+      description:
+        "Diagnose, repair, and maintain automotive vehicles in a timely and efficient manner, following repair orders to ensure optimal performance, safety, and customer satisfaction.",
+    },
+    {
+      date: "8/2019 – 6/2021",
+      company: "Karya Zirang Utama PT",
+      location: "Tasikmalaya, Indonesia",
+      position: "Workshop Head",
+      department: "Service Dept",
+      description:
+        "Oversee and manage the daily operations of an automotive repair and maintenance workshop, ensuring efficient workflow, quality workmanship, customer satisfaction, and the achievement of key performance indicators related to workshop sales and profitability.",
+    },
+    {
+      date: "09/2021 – 7/2022",
+      company: "Armada International Motor PT",
+      location: "Yogyakarta, Indonesia",
+      position: "Mechanic",
+      department: "Service Dept",
+      description:
+        "Diagnose, repair, and maintain automotive vehicles in a timely and efficient manner, following repair orders to ensure optimal performance, safety, and customer satisfaction.",
+    },
+    {
+      date: "2/2023 – Now",
+      company: "Karya Digital Kewrindo",
+      location: "Yogyakarta, Indonesia",
+      position: "Software Engineer",
+      department: "Technical",
+      description:
+        "Design, develop, test, and maintain high-quality software applications to meet business requirements and customer needs.",
+    },
+  ],
+  informalWork: [
+    {
+      date: "9/2022 – Now",
+      company: "Kewr Foundation",
+      location: "Yogyakarta, Indonesia",
+      position: "Researcher",
+      department: "Product Development",
+      description:
+        "Conduct research and analysis to identify and evaluate new software technologies, market trends, and customer needs to support the development of innovative software products.",
+    },
+  ],
+};
