@@ -1,54 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hendri's Home Page</title>
+    <title>Your Name - Personal Website</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
-    <meta name="description" content="Hendri Sulistya's Home Page" />
-    <meta name="keywords" content="Hendri Sulistya" />
-    <link id="theme-light" rel="stylesheet" href="/assets/css/style.css" />
-    <link
-      id="theme-dark"
-      rel="stylesheet"
-      href="/assets/css/dark.css"
-      disabled
-    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            color: {
+              grayCustom: "#1e1e1e",
+            },
+            fontFamily: {
+              sans: [
+                "-apple-system",
+                "BlinkMacSystemFont",
+                "Roboto",
+                "Arial",
+                "sans-serif",
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Add router script -->
+    <script src="router.js" defer></script>
   </head>
-  <body>
-    <div class="container">
-      <div class="toggle-wrapper">
-        <label class="switch">
-          <input type="checkbox" id="theme-toggle" />
-          <span class="slider round"></span>
-        </label>
-      </div>
-      <div class="content-wrapper">
-        <nav class="nav-links">
-          <div class="nav-items">
-            <ul>
-              <li><a href="#home" onclick="loadContent('home')">Home</a></li>
-              <li>
-                <a href="#career" onclick="loadContent('career')">Career</a>
-              </li>
-              <li>
-                <a href="#interest" onclick="loadContent('interest')"
-                  >Interest</a
-                >
-              </li>
-              <li>
-                <a href="#project" onclick="loadContent('project')">Project</a>
-              </li>
-            </ul>
+  <body class="bg-gray-100 dark:bg-neutral-900 flex flex-col h-full font-sans text-[14px] overflow-hidden">
+    <!-- Header: Fixed height -->
+    <header class="py-2 flex-none">
+      <div class="container mx-auto px-4 flex justify-end">
+        <button
+          id="darkModeToggle"
+          class="w-[68px] h-8 rounded-full bg-gray-200 dark:bg-gray-600 relative transition-colors duration-300 flex items-center px-1"
+        >
+          <div
+            class="w-6 h-6 rounded-full bg-white shadow-md absolute transform transition-transform duration-300 dark:translate-x-9"
+          >
+            <!-- Sun icon (shows in light mode) -->
+            <img
+              src="./assets/images/icons/sun.svg"
+              class="w-4 h-4 text-gray-600 block dark:hidden absolute top-1 left-1"
+              alt="light mode"
+              width="16"
+              height="16"
+            />
+            <!-- Moon icon (shows in dark mode) -->
+            <img
+              src="./assets/images/icons/moon.svg"
+              class="w-4 h-4 text-blue-600 hidden dark:block absolute top-1 left-1"
+              alt="dark mode"
+              width="16"
+              height="16"
+            />
           </div>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main: Scrollable content with fixed height -->
+    <main class="flex-1 min-h-0">
+      <div class="container mx-auto px-4 h-full flex flex-col">
+        <nav id="main-nav" class="py-2 flex-none">
+          <!-- Nav items will be generated here -->
         </nav>
-        <div class="content" id="content">
-          <!-- Dynamic content will be loaded here -->
+        <div
+          id="main-content"
+          class="p-4 dark:bg-neutral-800 rounded-lg border border-black dark:border-white transition-opacity duration-150 ease-in-out dark:text-white flex-1 overflow-y-auto"
+        >
+          <!-- Content will be loaded here dynamically -->
         </div>
       </div>
-    </div>
-    <script src="assets/js/data.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="/assets/js/theme.js" defer></script>
+    </main>
+
+    <!-- Footer: Fixed height -->
+    <footer class="dark:text-gray-300 py-4 flex-none">
+      <div class="container mx-auto px-4 text-center">
+        <p>&copy; 2024 Hendri S. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Dark mode toggle script -->
+    <script>
+      // Check for saved dark mode preference
+      if (
+        localStorage.getItem("darkMode") === "true" ||
+        (!localStorage.getItem("darkMode") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      }
+
+      document
+        .getElementById("darkModeToggle")
+        .addEventListener("click", () => {
+          const isDark = document.documentElement.classList.toggle("dark");
+          localStorage.setItem("darkMode", isDark);
+        });
+    </script>
   </body>
 </html>

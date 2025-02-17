@@ -1,0 +1,141 @@
+<section class="flex flex-col h-full p-4">
+  <div class="mb-8">
+    <h2
+      class="text-center text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4"
+    >
+      My Projects
+    </h2>
+    <p class="w-5/6 text-justify text-gray-600 dark:text-gray-300 mx-auto">
+      Welcome to my project showcase! Throughout my journey as a developer, I've
+      had the opportunity to work on diverse and challenging projects that have
+      shaped my skills and understanding of software development. Each project
+      here represents not just code, but a unique problem-solving journey,
+      innovative solutions, and valuable learning experiences. From web
+      applications to system architectures, these projects demonstrate my
+      passion for creating impactful solutions using modern technologies.
+    </p>
+  </div>
+
+  <!-- Change the grid container class -->
+  <div class="grid grid-cols-2 md:grid-cols-1 gap-8">
+    <!-- Project Cards -->
+  </div>
+</section>
+
+<script>
+  const projectsData = [
+    {
+      title: "Personal Blog",
+      image: "../assets/images/preview/blog.png",
+      description:
+        "I'm blessed with a love for writing, and I like to share my ideas and experiences on my own blog. I can immerse myself in whatever that inspires me there, be it a personal project, work-related issue, or just a fulfilling hobby. My posts should be meaningful to others, inspiring interesting conversations or providing readers with something of value. It all comes down to sharing and relating to the topics that I'm passionate about.",
+      technologies: ["HTML", "Tailwind CSS", "JavaScript"],
+      liveUrl: "https://example.com/portfolio",
+      githubUrl: "https://github.com/yourusername/portfolio",
+    },
+    {
+      title: "E-commerce Platform",
+      image: "../assets/images/ecommerce.jpg",
+      description:
+        "Full-stack e-commerce platform with user authentication, product management, and payment integration.",
+      technologies: ["React", "Node.js", "MongoDB"],
+      liveUrl: "https://example.com/ecommerce",
+      githubUrl: "https://github.com/yourusername/ecommerce",
+    },
+    {
+      title: "Task Management App",
+      image: "../assets/images/taskapp.jpg",
+      description:
+        "A collaborative task management application with real-time updates and team features.",
+      technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
+      liveUrl: "https://example.com/taskapp",
+      githubUrl: "https://github.com/yourusername/taskapp",
+    },
+  ];
+
+  function createProjectCard(project) {
+    const card = document.createElement("div");
+    card.className =
+      "bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105 md:max-w-4xl mx-auto w-full h-fit md:flex";
+
+    // Image container
+    const imageContainer = document.createElement("div");
+    imageContainer.className = "relative aspect-video md:w-1/2 md:aspect-auto";
+    const image = document.createElement("img");
+    image.src = project.image;
+    image.alt = project.title;
+    image.className = "w-full h-full object-cover";
+    imageContainer.appendChild(image);
+
+    // Content container
+    const content = document.createElement("div");
+    content.className = "p-6 md:w-1/2 md:flex md:flex-col md:justify-between";
+
+    // Title
+    const title = document.createElement("h3");
+    title.className = "text-xl font-bold text-gray-900 dark:text-white mb-2";
+    title.textContent = project.title;
+
+    // Description
+    const description = document.createElement("p");
+    description.className = "text-gray-600 dark:text-gray-300 mb-4";
+    description.textContent = project.description;
+
+    // Technologies container
+    const techContainer = document.createElement("div");
+    techContainer.className = "flex flex-wrap gap-2 mb-4";
+
+    // Create technology tags
+    project.technologies.forEach((tech) => {
+      const tag = document.createElement("span");
+      tag.className =
+        "px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full";
+      tag.textContent = tech;
+      techContainer.appendChild(tag);
+    });
+
+    // Links container
+    const links = document.createElement("div");
+    links.className = "flex space-x-4";
+
+    // Live demo link
+    const liveLink = document.createElement("a");
+    liveLink.href = project.liveUrl;
+    liveLink.target = "_blank";
+    liveLink.className = "text-blue-600 dark:text-blue-400 hover:underline";
+    liveLink.textContent = "Live Demo";
+
+    // GitHub link
+    const githubLink = document.createElement("a");
+    githubLink.href = project.githubUrl;
+    githubLink.target = "_blank";
+    githubLink.className = "text-blue-600 dark:text-blue-400 hover:underline";
+    githubLink.textContent = "GitHub";
+
+    // Assemble the card
+    links.append(liveLink, githubLink);
+    content.append(title, description, techContainer, links);
+    card.append(imageContainer, content);
+
+    return card;
+  }
+
+  function renderProjects() {
+    const projectsContainer = document.querySelector(".grid");
+    if (!projectsContainer) return;
+
+    const fragment = document.createDocumentFragment();
+    projectsData.forEach((project) => {
+      fragment.appendChild(createProjectCard(project));
+    });
+
+    projectsContainer.appendChild(fragment);
+  }
+
+  // Initialize when DOM is loaded
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", renderProjects);
+  } else {
+    renderProjects();
+  }
+</script>

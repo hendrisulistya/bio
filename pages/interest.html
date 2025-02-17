@@ -1,0 +1,301 @@
+<section class="container mx-auto p-1 md:p-6">
+  <div id="interest" class="space-y-6">
+    <div class="text-center mb-8">
+      <h2
+        class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4"
+      >
+        Interest
+      </h2>
+      <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        I'm passionate about exploring and learning from the world around me,
+        always curious to dive into new ideas and inspiring discoveries! Here's
+        a list of articles, books, videos, and papers that spark my interest.
+      </p>
+    </div>
+
+    <div class="interest-nav flex justify-center mb-6">
+      <div
+        class="border-b border-gray-200 dark:border-gray-700 w-full max-w-2xl"
+      >
+        <nav class="flex justify-center space-x-8" aria-label="Tabs">
+          <button
+            data-tab="interest-book"
+            class="tab-button py-4 px-6 border-b-2 font-medium text-sm whitespace-nowrap focus:outline-none border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300"
+          >
+            Book list
+          </button>
+          <button
+            data-tab="interest-paper"
+            class="tab-button py-4 px-6 border-b-2 font-medium text-sm whitespace-nowrap focus:outline-none border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300"
+          >
+            Paper list
+          </button>
+          <button
+            data-tab="interest-video"
+            class="tab-button py-4 px-6 border-b-2 font-medium text-sm whitespace-nowrap focus:outline-none border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300"
+          >
+            Video list
+          </button>
+        </nav>
+      </div>
+    </div>
+
+    <div class="interest-wrapper max-w-4xl mx-auto">
+      <div id="interest-book" class="hidden">
+        <ul class="space-y-6" id="book-list"></ul>
+      </div>
+      <div id="interest-paper" class="hidden">
+        <ul class="space-y-6" id="paper-list"></ul>
+      </div>
+      <div id="interest-video" class="hidden">
+        <ul class="space-y-6" id="video-list"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const interestData = {
+    books: [
+      {
+        title: "Structure and Interpretation of Computer Programs",
+        url: "https://www.example.com/book-1",
+        author: "Harold Abelson, Gerald Jay Sussman",
+        description:
+          "Structure and Interpretation of Computer Programs, a foundational text in computer science.",
+      },
+      {
+        title: "Madilog",
+        url: "https://www.example.com/book-2",
+        author: "Tan Malaka",
+        description:
+          "A philosophical work discussing the dialectical materialism applied in the Indonesian revolution.",
+      },
+      {
+        title: "Naar der Republic",
+        url: "https://www.example.com/book-3",
+        author: "Tan Malaka",
+        description:
+          "An influential piece advocating for Indonesian independence and republicanism.",
+      },
+      {
+        title: "Thus Spoke Zarathustra",
+        url: "https://www.example.com/book-4",
+        author: "Friedrich Nietzsche",
+        description:
+          "A philosophical novel exploring ideas of individualism and existentialism.",
+      },
+      {
+        title: "Atomic Habits",
+        url: "https://www.example.com/book-5",
+        author: "James Clear",
+        description:
+          "A practical guide to building good habits and breaking bad ones.",
+      },
+      {
+        title: "Psychology of Money",
+        url: "https://www.example.com/book-6",
+        author: "Morgan Housel",
+        description:
+          "An exploration of how psychology affects financial decisions and money management.",
+      },
+      {
+        title: "The State and Revolution",
+        url: "https://www.example.com/book-7",
+        author: "Vladimir Lenin",
+        description:
+          "A detailed theoretical text on Marxist theory and the role of revolution in creating a socialist state.",
+      },
+      {
+        title: "Wealth of Nations",
+        url: "https://www.example.com/book-8",
+        author: "Adam Smith",
+        description:
+          "A classic economic text outlining the principles of capitalism and the invisible hand.",
+      },
+    ],
+    papers: [
+      {
+        title: "Byzantine General Problem",
+        url: "https://www.example.com/paper-1",
+        author: "Leslie Lamport, Robert Shostak, Marshall Pease",
+        description:
+          "A foundational paper in distributed computing, discussing consensus in the presence of faulty or malicious actors.",
+      },
+      {
+        title: "Advances in Distributed Security",
+        url: "https://www.example.com/paper-2",
+        author: "Whitfield Diffie, Martin E. Hellman",
+        description:
+          "A paper on the evolution of cryptographic techniques and security in distributed systems.",
+      },
+      {
+        title: "Secrecy, Authentication, and Public Key Systems",
+        url: "https://www.example.com/paper-3",
+        author: "Ralph C. Merkle",
+        description:
+          "A seminal work discussing the development and usage of public key systems for secure communication.",
+      },
+      {
+        title: "Secure Communications over Insecure Channels",
+        url: "https://www.example.com/paper-4",
+        author: "Ralph C. Merkle",
+        description:
+          "One of the pioneering papers that introduced the concept of public key cryptography for secure communication.",
+      },
+      {
+        title: "Protocols for Public Key Cryptosystems",
+        url: "https://www.example.com/paper-5",
+        author: "Ralph C. Merkle",
+        description:
+          "A key paper on the development of public key cryptosystems and the RSA algorithm.",
+      },
+      {
+        title: "The Art of Unix Programming",
+        url: "https://www.example.com/paper-6",
+        author: "Eric S. Raymond",
+        description:
+          "A philosophical and practical guide on Unix programming and its culture.",
+      },
+      {
+        title: "Gnu Manifesto",
+        url: "https://www.example.com/paper-7",
+        author: "Richard Stallman",
+        description:
+          "The foundational document that launched the Free Software movement, advocating for software freedom.",
+      },
+      {
+        title: "Hukum Revolusi",
+        url: "https://www.example.com/paper-8",
+        author: "Tan Malaka",
+        description:
+          "A work on revolutionary law and strategy, focusing on Indonesian independence.",
+      },
+    ],
+    videos: [
+      {
+        title:
+          "Nick Bostrom: Humanity's biggest problems aren't what you think they are",
+        url: "https://www.youtube.com/watch?v=Yd9cf_vLviI",
+        author: "TEDx",
+        description: "Description for Video 1",
+      },
+      {
+        title: "Gavin Wood - A Walkthrough of Polkadot's Governance",
+        url: "https://www.youtube.com/watch?v=o8sAhDY6IyY&t=140s",
+        author: "Polkadot",
+        description: "Description for Video 2",
+      },
+      {
+        title: "Ethereum: The World computer, featuring Dr. Gavin Wood",
+        url: "https://www.youtube.com/watch?v=RoJkmxpOGis",
+        author: "IMWorld 2015",
+        description: "Description for Video 3",
+      },
+    ],
+  };
+
+  function toggleDisplay(sectionId) {
+    document.querySelectorAll(".interest-wrapper > div").forEach((div) => {
+      div.classList.add("hidden");
+    });
+    document.getElementById(sectionId).classList.remove("hidden");
+    setActiveTab(sectionId);
+  }
+
+  function setActiveTab(tabId) {
+    const tabs = document.querySelectorAll(".tab-button");
+    const activeClasses = "border-blue-500 text-blue-600 dark:text-blue-400";
+    const inactiveClasses =
+      "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300";
+
+    tabs.forEach((tab) => {
+      if (tab.dataset.tab === tabId) {
+        tab.classList.remove(...inactiveClasses.split(" "));
+        tab.classList.add(...activeClasses.split(" "));
+      } else {
+        tab.classList.remove(...activeClasses.split(" "));
+        tab.classList.add(...inactiveClasses.split(" "));
+      }
+    });
+  }
+
+  function createListItem(item) {
+    const li = document.createElement("li");
+    li.className =
+      "p-4 rounded-lg border border-gray-700 dark:border-gray-200 hover:shadow-md transition-shadow";
+
+    const link = document.createElement("a");
+    link.href = item.url;
+    link.target = "_blank";
+    link.className =
+      "text-blue-600 dark:text-blue-400 hover:underline font-medium block mb-2";
+    link.textContent = item.title;
+
+    const author = document.createElement("p");
+    author.className = "text-sm text-gray-600 dark:text-gray-400 mb-2";
+    author.textContent = `Author: ${item.author}`;
+
+    const description = document.createElement("p");
+    description.className = "text-sm text-gray-600 dark:text-gray-300";
+    description.textContent = item.description;
+
+    li.append(link, author, description);
+    return li;
+  }
+
+  function renderContent() {
+    const bookList = document.getElementById("book-list");
+    const paperList = document.getElementById("paper-list");
+    const videoList = document.getElementById("video-list");
+
+    // Clear existing content
+    [bookList, paperList, videoList].forEach((list) => {
+      if (list) list.innerHTML = "";
+    });
+
+    // Render new content
+    if (bookList) {
+      const bookFragment = document.createDocumentFragment();
+      interestData.books.forEach((book) =>
+        bookFragment.appendChild(createListItem(book))
+      );
+      bookList.appendChild(bookFragment);
+    }
+
+    if (paperList) {
+      const paperFragment = document.createDocumentFragment();
+      interestData.papers.forEach((paper) =>
+        paperFragment.appendChild(createListItem(paper))
+      );
+      paperList.appendChild(paperFragment);
+    }
+
+    if (videoList) {
+      const videoFragment = document.createDocumentFragment();
+      interestData.videos.forEach((video) =>
+        videoFragment.appendChild(createListItem(video))
+      );
+      videoList.appendChild(videoFragment);
+    }
+  }
+
+  // Initialize content and tabs
+  function init() {
+    // Add click listeners to tabs
+    document.querySelectorAll(".tab-button").forEach((button) => {
+      button.addEventListener("click", () => toggleDisplay(button.dataset.tab));
+    });
+
+    // Initial render
+    renderContent();
+    toggleDisplay("interest-book");
+  }
+
+  // Ensure DOM is loaded before initialization
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+</script>

@@ -1,0 +1,151 @@
+<section class="container mx-auto p-4 md:p-6" id="career-section">
+  <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-900 dark:text-white">
+    Career Experience
+  </h2>
+
+  <!-- Professional Work Section -->
+  <div class="mb-8">
+    <h3 class="text-xl md:text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">
+      Professional Work
+    </h3>
+    <div id="professional-work" class="space-y-6">
+      <!-- Professional work items will be rendered here -->
+    </div>
+  </div>
+
+  <!-- Informal Work Section -->
+  <div>
+    <h3 class="text-xl md:text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">
+      Informal Work
+    </h3>
+    <div id="informal-work" class="space-y-6">
+      <!-- Informal work items will be rendered here -->
+    </div>
+  </div>
+</section>
+
+<script>
+  const careerData = {
+    professional: [
+      {
+        period: "2/2023 – Now",
+        company: "Karya Digital Kewrindo",
+        location: "Yogyakarta, Indonesia",
+        position: "Software Engineer",
+        department: "Technical",
+        description: "Design, develop, test, and maintain high-quality software applications to meet business requirements and customer needs."
+      },
+      {
+        period: "09/2021 – 7/2022",
+        company: "Armada International Motor PT",
+        location: "Yogyakarta, Indonesia",
+        position: "Mechanic",
+        department: "Service Dept",
+        description: "Diagnose, repair, and maintain automotive vehicles in a timely and efficient manner, following repair orders to ensure optimal performance, safety, and customer satisfaction."
+      },
+      {
+        period: "8/2019 – 6/2021",
+        company: "Karya Zirang Utama PT",
+        location: "Tasikmalaya, Indonesia",
+        position: "Workshop Head",
+        department: "Service Dept",
+        description: "Oversee and manage the daily operations of an automotive repair and maintenance workshop, ensuring efficient workflow, quality workmanship, customer satisfaction, and the achievement of key performance indicators related to workshop sales and profitability."
+      }
+    ],
+    informal: [
+      {
+        period: "9/2022 – Now",
+        company: "Kewr Foundation",
+        location: "Yogyakarta, Indonesia",
+        position: "Researcher",
+        department: "Product Development",
+        description: "Conduct research and analysis to identify and evaluate new software technologies, market trends, and customer needs to support the development of innovative software products."
+      }
+    ]
+  };
+
+  function createCareerItem(item) {
+    const container = document.createElement('div');
+    container.className = 'flex flex-col md:flex-row gap-4 p-4 rounded-lg border border-black dark:border-gray-400';
+
+    // Left column
+    const leftCol = document.createElement('div');
+    leftCol.className = 'md:w-1/4';
+    
+    const infoContainer = document.createElement('div');
+    infoContainer.className = 'space-y-1';
+
+    const period = document.createElement('p');
+    period.className = 'text-sm font-medium text-gray-600 dark:text-gray-400';
+    period.textContent = item.period;
+
+    const company = document.createElement('p');
+    company.className = 'text-sm text-gray-600 dark:text-gray-400';
+    company.textContent = item.company;
+
+    const location = document.createElement('p');
+    location.className = 'text-sm text-gray-500 dark:text-gray-500';
+    location.textContent = item.location;
+
+    infoContainer.append(period, company, location);
+    leftCol.appendChild(infoContainer);
+
+    // Right column
+    const rightCol = document.createElement('div');
+    rightCol.className = 'md:w-3/4';
+
+    const position = document.createElement('h4');
+    position.className = 'text-lg font-medium text-gray-900 dark:text-white';
+    position.textContent = item.position;
+
+    const department = document.createElement('p');
+    department.className = 'text-sm text-gray-600 dark:text-gray-400 mb-1';
+    department.textContent = item.department;
+
+    const description = document.createElement('p');
+    description.className = 'text-sm text-gray-600 dark:text-gray-300';
+    description.textContent = item.description;
+
+    rightCol.append(position, department, description);
+
+    // Combine columns
+    container.append(leftCol, rightCol);
+    return container;
+  }
+
+  function renderCareerSection() {
+    const professionalWork = document.querySelector('#professional-work');
+    const informalWork = document.querySelector('#informal-work');
+
+    if (!professionalWork || !informalWork) {
+      console.error('Career sections not found, retrying...');
+      requestAnimationFrame(renderCareerSection);
+      return;
+    }
+
+    try {
+      // Clear existing content
+      professionalWork.innerHTML = '';
+      informalWork.innerHTML = '';
+
+      // Render professional work items
+      careerData.professional.forEach(item => {
+        professionalWork.appendChild(createCareerItem(item));
+      });
+
+      // Render informal work items
+      careerData.informal.forEach(item => {
+        informalWork.appendChild(createCareerItem(item));
+      });
+    } catch (error) {
+      console.error('Error rendering career sections:', error);
+    }
+  }
+
+  // Initialize rendering
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderCareerSection);
+  } else {
+    renderCareerSection();
+  }
+</script>
