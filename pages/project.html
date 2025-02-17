@@ -1,11 +1,7 @@
 <section class="flex flex-col h-full p-4">
   <div class="mb-8">
-    <h2
-      class="text-center text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4"
-    >
-      My Projects
-    </h2>
-    <p class="w-5/6 text-justify text-gray-600 dark:text-gray-300 mx-auto">
+    <h2 class="text-center text-2xl md:text-3xl font-bold mb-4">My Projects</h2>
+    <p class="w-5/6 text-justify mx-auto">
       Welcome to my project showcase! Throughout my journey as a developer, I've
       had the opportunity to work on diverse and challenging projects that have
       shaped my skills and understanding of software development. Each project
@@ -74,12 +70,13 @@
 
     // Title
     const title = document.createElement("h3");
-    title.className = "text-xl font-bold text-gray-900 dark:text-white mb-2";
+    title.className =
+      "text-xl font-bold  mb-2 text-blue-600 dark:text-blue-400";
     title.textContent = project.title;
 
     // Description
     const description = document.createElement("p");
-    description.className = "text-gray-600 dark:text-gray-300 mb-4";
+    description.className = " mb-4";
     description.textContent = project.description;
 
     // Technologies container
@@ -90,7 +87,7 @@
     project.technologies.forEach((tech) => {
       const tag = document.createElement("span");
       tag.className =
-        "px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full";
+        "px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700  rounded-full";
       tag.textContent = tech;
       techContainer.appendChild(tag);
     });

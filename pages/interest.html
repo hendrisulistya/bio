@@ -1,12 +1,8 @@
 <section class="container mx-auto p-1 md:p-6">
   <div id="interest" class="space-y-6">
     <div class="text-center mb-8">
-      <h2
-        class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4"
-      >
-        Interest
-      </h2>
-      <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Interest</h2>
+      <p class="max-w-2xl mx-auto">
         I'm passionate about exploring and learning from the world around me,
         always curious to dive into new ideas and inspiring discoveries! Here's
         a list of articles, books, videos, and papers that spark my interest.
@@ -20,19 +16,19 @@
         <nav class="flex justify-center space-x-8" aria-label="Tabs">
           <button
             data-tab="interest-book"
-            class="tab-button py-4 px-6 border-b-2 font-medium text-sm whitespace-nowrap focus:outline-none border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300"
+            class="tab-button py-4 px-6 border-b-2 font-medium text-sm whitespace-nowrap focus:outline-none border-transparent hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300"
           >
             Book list
           </button>
           <button
             data-tab="interest-paper"
-            class="tab-button py-4 px-6 border-b-2 font-medium text-sm whitespace-nowrap focus:outline-none border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300"
+            class="tab-button py-4 px-6 border-b-2 font-medium text-sm whitespace-nowrap focus:outline-none border-transparent hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300"
           >
             Paper list
           </button>
           <button
             data-tab="interest-video"
-            class="tab-button py-4 px-6 border-b-2 font-medium text-sm whitespace-nowrap focus:outline-none border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300"
+            class="tab-button py-4 px-6 border-b-2 font-medium text-sm whitespace-nowrap focus:outline-none border-transparent hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300"
           >
             Video list
           </button>
@@ -207,7 +203,7 @@
     const tabs = document.querySelectorAll(".tab-button");
     const activeClasses = "border-blue-500 text-blue-600 dark:text-blue-400";
     const inactiveClasses =
-      "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300";
+      "border-transparent  hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300";
 
     tabs.forEach((tab) => {
       if (tab.dataset.tab === tabId) {
@@ -233,11 +229,11 @@
     link.textContent = item.title;
 
     const author = document.createElement("p");
-    author.className = "text-sm text-gray-600 dark:text-gray-400 mb-2";
+    author.className = "text-sm  mb-2";
     author.textContent = `Author: ${item.author}`;
 
     const description = document.createElement("p");
-    description.className = "text-sm text-gray-600 dark:text-gray-300";
+    description.className = "text-sm";
     description.textContent = item.description;
 
     li.append(link, author, description);
