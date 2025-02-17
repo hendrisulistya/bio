@@ -17,7 +17,7 @@
   </div>
 
   <!-- Change the grid container class -->
-  <div class="grid grid-cols-2 md:grid-cols-1 gap-8">
+  <div class="grid grid-cols-2 md:grid-cols-1 gap-4">
     <!-- Project Cards -->
   </div>
 </section>
@@ -31,32 +31,33 @@
         "I'm blessed with a love for writing, and I like to share my ideas and experiences on my own blog. I can immerse myself in whatever that inspires me there, be it a personal project, work-related issue, or just a fulfilling hobby. My posts should be meaningful to others, inspiring interesting conversations or providing readers with something of value. It all comes down to sharing and relating to the topics that I'm passionate about.",
       technologies: ["HTML", "Tailwind CSS", "JavaScript"],
       liveUrl: "https://example.com/portfolio",
-      githubUrl: "https://github.com/yourusername/portfolio",
+      githubUrl: "https://github.com/hendrisulistya/bio",
     },
     {
-      title: "E-commerce Platform",
-      image: "../assets/images/ecommerce.jpg",
+      title: "Kewr Wallet",
+      image: "../assets/images/preview/wallet-gen.png",
       description:
-        "Full-stack e-commerce platform with user authentication, product management, and payment integration.",
-      technologies: ["React", "Node.js", "MongoDB"],
-      liveUrl: "https://example.com/ecommerce",
-      githubUrl: "https://github.com/yourusername/ecommerce",
+        "Cryptocurrency wallet generator. Fully customizable, user can implement BIP-32, BIP-39 or BIP-44. User freely decide how to generate their address with many option and scenario. Currently support Bitcoin, Ethereum, Cosmos (on Progress..) Written in Golang.",
+      technologies: ["Go", "BIP", "Blockchain", , "Cryptocurrency", "Wallet"],
+      liveUrl: "#",
+      githubUrl: "https://github.com/hendrisulistya/kewr-wallet",
     },
     {
-      title: "Task Management App",
-      image: "../assets/images/taskapp.jpg",
+      title: "IBC Relayer",
+      image: "../assets/images/preview/ibc-as-a-service.jpg",
       description:
-        "A collaborative task management application with real-time updates and team features.",
-      technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
-      liveUrl: "https://example.com/taskapp",
-      githubUrl: "https://github.com/yourusername/taskapp",
+        "As a dedicated contributor to the Cosmos ecosystem, I've been actively involved in facilitating interchain communication through IBC since 2022. My experience includes relaying numerous packets across various chains, ensuring seamless and efficient transactions between different networks. I'm committed to continuing my role as a relayer, contributing to the growth and interoperability of the Cosmos ecosystem.",
+      technologies: ["Rust", "Hermes", "Cosmos", "IBC", "Relayer"],
+      liveUrl:
+        "https://ibc.iobscan.io/relayers/details/63a512f20b15751519cac459",
+      githubUrl: "https://github.com/informalsystems/hermes",
     },
   ];
 
   function createProjectCard(project) {
     const card = document.createElement("div");
     card.className =
-      "bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105 md:max-w-4xl mx-auto w-full h-fit md:flex";
+      "m-4 p-4 rounded-lg border border-gray-700 dark:border-gray-200 shadow-lg overflow-hidden transition-transform md:max-w-4xl mx-auto w-full h-fit md:flex";
 
     // Image container
     const imageContainer = document.createElement("div");
